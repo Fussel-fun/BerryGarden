@@ -1,0 +1,62 @@
+Welcome To BerryGarden 
+Version 0.2
+
+This is a early version of a programm for the Raspberrypi Computers to Monitor GrowTents and Gardens.
+
+BerryGarden is writen in C and by one Person (until now), so the Code might not be the best.
+
+Since BerryGarden is Writen only by Me im more than Thankfull if anyone wanna help and become a part of this Hobby projekt.
+
+FUNCTIONS:
+
+BerryGarden is a CLI Monitor for Plants that can Sens if the Light is on or of, the Soil has enought Water, Waht the Temp and Humidity is, and the Abillity to Turn on a 5V Fans and a 5V Diver Pump
+
+INSTALL:
+
+To install BerryGarden on your RasPi: 
+1. clone the github repo 
+
+2. Run the Install.sh file with chmod u+x (Which compiles the C file and moves the .elf file and log.md file in to /usr/bin)
+
+3. run berryg02 to open BerryGarden
+
+!! Make Sure to install gcc und wiringPi on the Pi befor installing!!
+
+After the installation BerryGarden Auto runs after Login for an easy use with ssh on phones
+
+Options: 
+1 = TEMP MENU
+Read Temp 
+Turn ON Fan 
+
+2 = LIGHT MENU
+Read Light On or Off
+
+3 = WATER MENU
+Turn Pump on 
+Turn Pump Of 
+Read Soil 
+
+4 = AIR MENU
+Read Humidity 
+Turn On Fans 
+Turn Off Fans 
+
+5 = LOGS
+Printf Log file To Console (See all GPIO Actions)
+
+9 = QUIT
+
+PINOUT:
+
+PIN17, OUTPUT   //FAN
+PIN27, INPUT    //FAN READ
+PIN26, OUTPUT   //LIGHTCHECK
+PIN16, INPUT    //LIGHTCHECK READ
+PIN14, OUTPUT   //SOILPROB
+PIN15, INPUT    //SOILPROB READ
+PIN2,  OUTPUT   //PUMP
+PIN3,  INPUT    //PUMP READ
+
+PS: 
+This Is Purely a Hobby Projekt so im Sorry if the Code is Messy. If you have any ideas how to Make Projekt Better Let me Know or Send a PR :) !!!
