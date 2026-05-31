@@ -9,18 +9,21 @@ Since BerryGarden is Writen only by Me im more than Thankfull if anyone wanna he
 
 FUNCTIONS:
 
-BerryGarden is a CLI Monitor for Plants that can Sens if the Light is on or of, the Soil has enought Water, Waht the Temp and Humidity is, and the Abillity to Turn on a 5V Fans and a 5V Diver Pump
+BerryGarden is a CLI Monitor for Plants that can Read if the Light is on or off, the Soil has enought Water, Waht the Temp and Humidity is, and the Abillity to Turn on a 5V Fans and a 5V Diver Pump
+For Reading The Light its easy and Cheap to use a LDR 
+For Reading The Water in the Soil you could use a Sensor but two unshielded Wires do the same Job(for safety reasons its not recommended to run it for Long periods of Time)
+Temp and Humidity Sensor arnt included in the Code yet but will come untill next Month :)
 
 INSTALL:
 
 To install BerryGarden on your RasPi: 
 1. clone the github repo 
 
-2. Run the Install.sh file with chmod u+x (Which compiles the C file and moves the .elf file and log.md file in to /usr/bin)
+2. Run the Install.sh of the version you wanna install file with chmod u+x (Which compiles the C file and moves the .elf file and log.md file in to /usr/bin)
 
 3. run berryg02 to open BerryGarden
 
-!! Make Sure to install gcc und wiringPi on the Pi befor installing!!
+!! Make Sure to install gcc and the wiringPi libray on the Pi before installing!!
 
 After the installation BerryGarden Auto runs after Login for an easy use with ssh on phones
 
