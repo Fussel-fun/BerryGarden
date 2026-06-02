@@ -348,24 +348,34 @@ char checkLightGPIO(int in)
     time(&currentTime);
     FILE* file;
     file = fopen("log.md", "a");
-char choose;
-digitalWrite(PIN26, HIGH);
+	in = 0;
+	digitalWrite(PIN26, HIGH);
     if (digitalRead(PIN16) == LOW)
     {
         printf("OFF\n");
         fprintf(file, "%s\n LIGHT OFF\n\n", ctime(&currentTime));
-        printf("Change Air For 2 Minutes");
-            for (int i = 0; i < 120; i++)
-            {
-                fanGPIO (1);
-                delay(1000);
-            }
-            fanGPIO(0);
-            digitalWrite(PIN26, LOW);
-            digitalWrite(PIN16, LOW);
-            return 1;                           
+        printf("Change Air For 2 Minutes? 1 ON 2 OFF");
+       while(in == 0)
+        {
+        	scanf("%i", &in);
+        }  
+     		if (in == 1);
+     		{
+     			for (int i = 0; i < 120; i++)
+        		{
+        	    fanGPIO (1);
+        	    delay(1000);
+        		}
+        	fanGPIO(0);
+        	digitalWrite(PIN26, LOW);
+        	digitalWrite(PIN16, LOW);  
+        	}
+        	if (in == 2)
+        	{
+        		return 0;
+        	}                         
     }
-    if (digitalRead(PIN16) == HIGH)
+ 	if (digitalRead(PIN16) == HIGH)
     {
         // LIGHT MENU
         fprintf(file, "%s\n LIGHT ON\n\n", ctime(&currentTime));
