@@ -354,7 +354,7 @@ char checkLightGPIO(int in)
     {
         printf("OFF\n");
         fprintf(file, "%s\n LIGHT OFF\n\n", ctime(&currentTime));
-        printf("Change Air For 2 Minutes? 1 ON 2 OFF");
+        printf("Change Air For 2 Minutes?\n 1 ON 2 OFF");
        while(in == 0)
         {
         	scanf("%i", &in);
