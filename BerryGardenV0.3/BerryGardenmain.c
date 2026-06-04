@@ -90,7 +90,7 @@ int monmins = 0;
     }
     else if (in == BASH)
     {
-    system("bash");
+    system("exit");
     }
     else if (in == QUIT)
     {
