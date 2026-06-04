@@ -9,6 +9,8 @@ echo installing Gcc
 sudo apt install gcc 
 echo installing git 
 sudo apt-get install git git-core
+echo installing Tmux
+sudo apt install tmux
 cd /
 echo installing WiringPilib for C
 sudo git clone https://github.com/wiringpi/wiringpi
