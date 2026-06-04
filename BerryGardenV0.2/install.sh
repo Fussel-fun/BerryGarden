@@ -22,9 +22,4 @@ echo Open Readme...
 
 nano README.md
 
-cd 
-
-rm -rf BerryGardenV0.2
-
-
 

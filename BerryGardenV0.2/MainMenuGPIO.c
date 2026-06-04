@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <wiringPi.h>
 #include <time.h>
@@ -119,6 +120,7 @@ int mainmenu(int in)
     else if (in == QUIT)
     {
     GPIOOFF();
+    system("exit");
     return 0;
     }
  in = 0;
