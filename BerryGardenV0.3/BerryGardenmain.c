@@ -40,7 +40,7 @@ int main()
     while (in != 9)
     {
     // Print Current Time 			
-	printf("HELLO FROM YOUR OWN BERRYGARDEN!")
+	printf("HELLO FROM YOUR OWN BERRYGARDEN!");
   	printf("%s",  ctime(&currentTime));
         // print Options while no Option is Choosen 
         do
