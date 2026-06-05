@@ -98,7 +98,7 @@ int monmins = 0;
     }
     else if (in == BASH)
     {
-    	system("sudo tmux");
+    	system("tmux");
     }
     else if (in == QUIT)
     {
