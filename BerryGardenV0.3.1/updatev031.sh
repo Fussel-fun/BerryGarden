@@ -15,11 +15,15 @@ sudo cp berryg /usr/bin
 sudo cp monitor /usr/bin
 
 cd /BerryGarden
-gcc uniup.c -o uniup
 sudo cp uniup /usr/bin
 sudo cp uniup.sh /usr/bin
 cd /usr/bin
 chmod u+x uniup.sh
+
+cd /BerryGarden/versions
+cp updatev031.sh /usr/bin
+cd /usr/bin
+chomd u+x updatev031.sh 
 
 cd /BerryGarden/BerryGardenV0.3.1
 echo remove berryg.elf
