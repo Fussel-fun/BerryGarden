@@ -94,7 +94,7 @@ int monmins = 0;
     }
     else if (in == UP)
     {
-    	system("updatev03.sh");
+    	system("uniup");
     }
     else if (in == BASH)
     {
