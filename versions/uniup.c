@@ -2,7 +2,7 @@
 
 int main ()
 {
-printf("Getting Versions")
+	printf("Getting Versions");
 	system("uniup.sh");
 	int input = 0;
 	do 
@@ -16,11 +16,11 @@ printf("Getting Versions")
 	{
 		system("updatev03.sh");
 	}
-	if (input == 2)
+	else if (input == 2)
 	{
 		system("updatev031.sh");
 	}
-	if (input == 9)
+	else if (input == 9)
 	{
 		system("uninstallbg.sh");
 	}
