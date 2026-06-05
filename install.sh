@@ -31,7 +31,7 @@ echo copie berryg and monitor
 sudo cp berryg /usr/bin
 sudo cp log.md /usr/bin
 sudo cp monitor /usr/bin
-cd /BerryGarden/version
+cd /BerryGarden/versions
 cp updatev03.sh updatev031.sh /usr/bin
 gcc uniup.c -o uniup
 sudo cp uniup /usr/bin
