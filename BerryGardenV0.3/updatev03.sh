@@ -2,7 +2,7 @@
 
 echo Updating BerryGarden
 echo Updating BerryGarden
-sudo apt update && sudo apt upgraden 
+sudo apt update && sudo apt upgrade
 cd /BerryGarden/BerryGardenV0.3
 git pull 
 sudo rm /usr/bin/berryg03 

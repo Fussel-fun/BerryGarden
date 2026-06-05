@@ -45,7 +45,6 @@ int main()
         do
         {
             printf("Choose Option:\n\nOptions: \n1 = LIGHT MONITOR\n2 = SOIL MONITOR\n3 = LOGS\n4 = Run Monitor\n5 = UPDATE\n8 = TMUX\n9 = Turn Off GPIO\n");
-			printf("\n\n UPDATETEST");
             scanf("%i", &in);
         }
         while (in == 0);
@@ -93,7 +92,7 @@ int monmins = 0;
     }
     else if (in == UP)
     {
-    	system("updatev03.sh");
+    	system("sudo updatev03.sh");
     }
     else if (in == BASH)
     {
