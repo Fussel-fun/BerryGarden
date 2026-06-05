@@ -33,7 +33,7 @@ sudo cp log.md /usr/bin
 sudo cp monitor /usr/bin
 cd /BerryGarden/versions
 gcc uniup.c -o uniup
-
+cp uniup /usr/bin
 cp updatev03.sh updatev031.sh /usr/bin
 sudo cp uniup /usr/bin
 cd /BerryGarden
