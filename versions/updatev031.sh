@@ -23,7 +23,7 @@ chmod u+x uniup.sh
 cd /BerryGarden/versions
 cp updatev031.sh /usr/bin
 cd /usr/bin
-chomd u+x updatev031.sh 
+chmod u+x updatev031.sh 
 
 cd /BerryGarden/BerryGardenV0.3.1
 echo remove berryg.elf
