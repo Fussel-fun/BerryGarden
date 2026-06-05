@@ -1,7 +1,6 @@
 #!/bin/bash
 echo updating .bashrc
 echo "echo Starting BerryGarden" >> .bashrc
-echo "exec tmux" >> .bashrc
 echo "berryg03" >> .bashrc
 echo Updating System 
 sudo apt update && sudo apt upgrade 
