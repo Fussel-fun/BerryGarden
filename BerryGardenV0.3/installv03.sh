@@ -27,7 +27,7 @@ sudo cp berryg03 /usr/bin
 sudo cp log.md /usr/bin
 sudo cp monitor /usr/bin
 sudo cp updatev03.sh /usr/bin
-cd /
+cd /usr/bin
 sudo chmod u+x updatev03.sh
 echo remove berryg03.elf
 cd /BerryGarden/BerryGardenV0.3
