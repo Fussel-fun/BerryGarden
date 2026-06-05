@@ -14,10 +14,8 @@ echo copie berryg and monitor Version 0.3.1
 sudo cp berryg /usr/bin
 sudo cp monitor /usr/bin
 
-cd /BerryGarden/versions
-gcc uniup.c -o uniup
-sudo cp uniup /usr/bin
-cd /BerryGarden/versions
+
+cd /BerryGarden
 sudo cp uniup.sh /usr/bin
 cd /usr/bin
 chmod u+x uniup.sh
@@ -35,6 +33,11 @@ cd /BerryGarden/versions
 sudo cp uninstallbg.sh /usr/bin
 cd /usr/bin 
 chmod u+x uninstallbg.sh
+cd /BerryGarden/versions
+gcc uniup.c -o uniupnew
+sudo cp uniupnew /usr/bin
+cd /usr/bin
+mv uniupnew uniup
 cd /BerryGarden/BerryGardenV0.3.1
 echo Open Readme...
 nano READMEV0.3.1.md
