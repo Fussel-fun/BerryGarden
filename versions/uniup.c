@@ -8,7 +8,7 @@ int main ()
 	do 
 	{
 		printf("Versions:\n");
-		printf("1 = V0.3.0\n2 = V0.3.1\n9 = uninstall");
+		printf("1 = V0.3.0\n2 = V0.3.1\n9 = UNINSTALL\n");
 		scanf("%i", &input);
 	}while(input == 0);
 	
