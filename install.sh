@@ -35,6 +35,10 @@ cd /BerryGarden/versions
 cp updatev03.sh updatev031.sh /usr/bin
 gcc uniup.c -o uniup
 sudo cp uniup /usr/bin
+cd /BerryGarden
+sudo cp uniup.sh /usr/bin
+ch /udr/bin  
+chmod u+x uniup.sh 
 echo cleanup
 echo remove berryg.elf
 cd /BerryGarden/BerryGardenV0.3.1
