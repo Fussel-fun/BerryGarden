@@ -21,12 +21,14 @@ echo Running Gcc
 cd /
 sudo git clone https://github.com/Fussel-fun/BerryGarden
 cd /BerryGarden/BerryGardenV0.3
+chmod u+x updatev03.sh
 gcc BerryGardenMon.c -o monitor -l wiringPi
 gcc BerryGardenmain.c -o berryg03 -l wiringPi
 echo copie berryg03 and monitor
 sudo cp berryg03 /usr/bin
 sudo cp log.md /usr/bin
 sudo cp monitor /usr/bin
+sudo cp updatev03.sh /usr/bin
 echo remove berryg03.elf
 rm berryg03
 echo Add Auto Start on Login

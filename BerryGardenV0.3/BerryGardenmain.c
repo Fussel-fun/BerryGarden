@@ -16,8 +16,10 @@ const int LIGHT = 1;
 const int WTR = 2;
 const int LOG = 3;
 const int RNMON = 4;
+const int UP = 5;
 const int BASH = 8;
 const int QUIT = 9;
+
 int mainmenu(int in);
 int soilreadGPIO();
 int checkLightGPIO();
@@ -42,7 +44,7 @@ int main()
         // print Options while no Option is Choosen 
         do
         {
-            printf("Choose Option:\n\nOptions: \n1 = LIGHT MONITOR\n2 = SOIL MONITOR\n3 = LOGS\n4 = Run Monitor\n8 = TMUX\n9 = Turn Off GPIO\n");
+            printf("Choose Option:\n\nOptions: \n1 = LIGHT MONITOR\n2 = SOIL MONITOR\n3 = LOGS\n4 = Run Monitor\n5 = UPDATE\n8 = TMUX\n9 = Turn Off GPIO\n");
             scanf("%i", &in);
         }
         while (in == 0);
@@ -87,6 +89,10 @@ int monmins = 0;
     else if (in == RNMON)
     {
     	system("monitor");
+    }
+    else if (in == UP)
+    {
+    	system("updatev03.sh");
     }
     else if (in == BASH)
     {
