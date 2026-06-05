@@ -92,7 +92,7 @@ int monmins = 0;
     }
     else if (in == UP)
     {
-    	system("sudo updatev03.sh");
+    	system("updatev03.sh");
     }
     else if (in == BASH)
     {
