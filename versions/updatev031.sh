@@ -17,7 +17,7 @@ sudo cp monitor /usr/bin
 cd /BerryGarden/versions
 gcc uniup.c -o uniup
 sudo cp uniup /usr/bin
-cd BerryGarden/versions
+cd /BerryGarden/versions
 sudo cp uniup.sh /usr/bin
 cd /usr/bin
 chmod u+x uniup.sh
