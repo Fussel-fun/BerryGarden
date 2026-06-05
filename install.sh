@@ -1,7 +1,7 @@
 #!/bin/bash
 echo updating .bashrc
 echo "echo Starting BerryGarden" >> .bashrc
-echo "sudo berryg" >> .bashrc
+echo "exec sudo berryg" >> .bashrc
 echo Updating System 
 sudo apt update && sudo apt upgrade 
 sudo apt-get update && sudo apt-get upgrade

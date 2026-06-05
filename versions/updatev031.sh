@@ -14,7 +14,7 @@ echo copie berryg and monitor Version 0.3.1
 sudo cp berryg /usr/bin
 sudo cp monitor /usr/bin
 
-cd /BerryGarden
+cd /BerryGarden/versions
 sudo cp uniup /usr/bin
 sudo cp uniup.sh /usr/bin
 cd /usr/bin
