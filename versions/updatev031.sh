@@ -28,6 +28,11 @@ chomd u+x updatev031.sh
 cd /BerryGarden/BerryGardenV0.3.1
 echo remove berryg.elf
 rm berryg
-echo Add Auto Start on Login
+
+cd /BerryGarden/versions
+sudo cp uninstallbg.sh /usr/bin
+cd /usr/bin 
+chmod u+x uninstallbg.sh
+cd /BerryGarden/BerryGardenV0.3.1
 echo Open Readme...
 nano READMEV0.3.1.md
