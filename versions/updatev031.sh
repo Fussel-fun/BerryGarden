@@ -10,7 +10,7 @@ sudo rm /usr/bin/monitor
 gcc BerryGardenMon.c -o monitor -l wiringPi
 gcc BerryGardenmain.c -o berryg -l wiringPi
 
-echo copie berryg and monitor (Version 0.3.1)
+echo copie berryg and monitor Version 0.3.1
 sudo cp berryg /usr/bin
 sudo cp monitor /usr/bin
 
