@@ -37,7 +37,7 @@ gcc uniup.c -o uniup
 sudo cp uniup /usr/bin
 cd /BerryGarden
 sudo cp uniup.sh /usr/bin
-ch /udr/bin  
+cd /usr/bin  
 chmod u+x uniup.sh 
 echo cleanup
 echo remove berryg.elf
