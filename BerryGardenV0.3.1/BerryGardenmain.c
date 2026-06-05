@@ -17,6 +17,7 @@ const int WTR = 2;
 const int LOG = 3;
 const int RNMON = 4;
 const int UP = 5;
+const int GPIOOFF = 6;
 const int BASH = 8;
 const int QUIT = 9;
 
@@ -102,7 +103,7 @@ int monmins = 0;
     }
     else if (in == QUIT)
     {
-	printf("Turning Off GPIO");
+	printf("QUIT");
     GPIOOFF();
     return 0;
     }
