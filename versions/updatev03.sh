@@ -13,6 +13,7 @@ gcc BerryGardenmain.c -o berryg -l wiringPi
 echo copie berryg and monitor
 sudo cp berryg /usr/bin
 sudo cp monitor /usr/bin
+cd /BerryGarden/versions
 sudo cp updatev03.sh /usr/bin
 cd /usr/bin 
 chmod u+x updatev03.sh
