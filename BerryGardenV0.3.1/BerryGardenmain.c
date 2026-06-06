@@ -108,6 +108,17 @@ int monmins = 0;
     else if (in == QUIT)
     {
 	printf("QUIT");
+	time_t currentTime;
+	time(&currentTime);
+	FILE *file;
+	file = fopen("log.md", "a");
+	if (file == NULL)
+	{
+		printf("Failed to Open file");
+		return 1;
+	}
+	fprintf(file, "%s\nSSH CLOSED",ctime(&currentTime));
+	fclose(file);
     GPIOOFF();
     return 0;
     }
