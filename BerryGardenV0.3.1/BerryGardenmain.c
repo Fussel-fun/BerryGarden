@@ -99,7 +99,7 @@ int monmins = 0;
     }
     else if (in == GPIO)
     {
-    	GPIOFF();
+    	GPIOOFF();
     }
     else if (in == BASH)
     {
