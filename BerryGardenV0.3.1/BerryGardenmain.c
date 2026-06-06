@@ -104,7 +104,7 @@ int monmins = 0;
     }
     else if (in == IP)
     {
-    	system("ifconifg");
+    	system("ifconfig");
     }
     else if (in == BASH)
     {
