@@ -29,5 +29,8 @@ cd /BerryGarden/BerryGardenV0.4
 echo remove berryg.elf
 rm berryg
 echo Add Auto Start on Login
+cd / 
+source myenv/bin/activate
+python3 -m pip install adafruit-circuitpython-dht
 echo Open Readme...
 nano READMEV0.4.md
