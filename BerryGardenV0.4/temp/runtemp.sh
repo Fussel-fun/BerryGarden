@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /BerryGarden/temp
+cd /BerryGarden/BerryGardenV0.4/temp
 
 source /myenv/bin/activate
 
