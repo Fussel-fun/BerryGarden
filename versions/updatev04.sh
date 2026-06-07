@@ -32,6 +32,8 @@ sudo cp runtemp.sh /usr/bin
 python3 -m venv myenv
 source myenv/bin/activate
 python3 -m pi install adafruit-circuitpython-dht
+cd /usr/bin
+chmod u+x runtemp.sh
 cd /BerryGarden/BerryGardenV0.4
 echo remove berryg.elf
 rm berryg
