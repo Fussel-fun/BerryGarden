@@ -25,12 +25,14 @@ cp updatev04.sh /usr/bin
 cd /usr/bin
 chmod u+x updatev04.sh 
 
+
+echo Add Temp Script
+cd /BerryGarden/BerryGardenV0.4/temp
+python3 -m venv myenv
+source myenv/bin/activate
+python3 -m pi install adafruit-circuitpython-dht
 cd /BerryGarden/BerryGardenV0.4
 echo remove berryg.elf
 rm berryg
-echo Add Temp Script
-cd / 
-source myenv/bin/activate
-python3 -m pip install adafruit-circuitpython-dht
 echo Open Readme...
 nano READMEV0.4.md
