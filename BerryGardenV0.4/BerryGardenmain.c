@@ -51,7 +51,7 @@ int main()
             printf("Choose Option:\n\nOptions: \n1 = LIGHT MONITOR\n2 = SOIL MONITOR\n3 = LOGS\n4 = Run Monitor\n5 = UPDATE\n6 = GPIOOFF\n7 = Temp\n8 = TMUX\n9 = SSH Quit\n");
             scanf("%i", &in);
         }
-        while (in != QUIT);
+        while (in == 0);
     // Open Menu Points 
     mainmenu(in);    
     }
