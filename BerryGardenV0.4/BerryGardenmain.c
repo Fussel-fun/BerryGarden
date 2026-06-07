@@ -29,6 +29,7 @@ int GPIOOFF();
 
 int main()
 {
+   system("uniup");
    wiringPiSetup();
         pinMode (PIN26, OUTPUT); //LIGHTCHECK
         pinMode (PIN16, INPUT);  //LIGHTCHECK
