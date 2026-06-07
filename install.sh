@@ -33,7 +33,7 @@ sudo cp log.md /usr/bin
 sudo cp monitor /usr/bin
 cd /BerryGarden
 gcc uniup.c -o uniup
-sudo cp uniup /usr/bin
+sudo cp uniup uniup.sh /usr/bin
 cd /BerryGarden/versions
 echo cleanup
 echo remove berryg.elf
