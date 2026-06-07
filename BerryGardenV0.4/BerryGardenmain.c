@@ -104,7 +104,7 @@ int monmins = 0;
     }
     else if (in == TEMP)
     {
-    	system("python /usr/bin/test.py");
+    	system("python /test.py");
     }
     else if (in == BASH)
     {
