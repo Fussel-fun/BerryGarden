@@ -105,7 +105,7 @@ int monmins = 0;
     }
     else if (in == TEMP)
     {
-    	system("runtemp.sh");
+    	system("./runtemp.sh");
     }
     else if (in == BASH)
     {
