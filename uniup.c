@@ -12,10 +12,10 @@ printf("Getting Versions");
 		scanf("%i", &input);
 	}while(input == 0);
 	
-	if (input == 1)
+/*	if (input == 1)
 	{
 		system("updatev03.sh");
-	}
+*/	
 	if (input == 2)
 	{
 		system("updatev031.sh");
