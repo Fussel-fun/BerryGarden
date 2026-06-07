@@ -40,7 +40,7 @@ cd /BerryGarden/BerryGardenV0.4
 rm berryg
 
 echo run up
-sudo ./uniup.sh
+sudo uniup.sh
 sudo uniup
 echo Open Readme...
 nano READMEV0.4.md
