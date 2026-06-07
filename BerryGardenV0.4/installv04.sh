@@ -1,7 +1,7 @@
 #!/bin/bash
 echo updating .bashrc
 echo "echo Starting BerryGarden" >> .bashrc
-echo "sudo berryg" >> .bashrc
+echo "[exec] sudo berryg" >> .bashrc
 echo Updating System 
 sudo apt update && sudo apt upgrade 
 sudo apt-get update && sudo apt-get upgrade
@@ -34,7 +34,7 @@ sudo cp monitor /usr/bin
 cd /BerryGarden
 gcc uniup.c -o uniup
 sudo cp uniup /usr/bin
-cd /BerryGarden/Versions
+cd /BerryGarden/versions
 echo cleanup
 echo remove berryg.elf
 cd /BerryGarden/BerryGardenV0.4

@@ -2,7 +2,7 @@
 
 int main ()
 {
-printf("Getting Versions")
+printf("Getting Versions");
 	system("uniup.sh");
 	int input = 0;
 	do 
