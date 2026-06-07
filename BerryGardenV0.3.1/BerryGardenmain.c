@@ -18,6 +18,7 @@ const int LOG = 3;
 const int RNMON = 4;
 const int UP = 5;
 const int GPIO = 6;
+const int IP = 7;
 const int BASH = 8;
 const int QUIT = 9;
 
@@ -47,7 +48,7 @@ int main()
         // print Options while no Option is Choosen 
         do
         {
-            printf("Choose Option:\n\nOptions: \n1 = LIGHT MONITOR\n2 = SOIL MONITOR\n3 = LOGS\n4 = Run Monitor\n5 = UPDATE\n6 = GPIOOFF\n8 = TMUX\n9 = Turn Off GPIO\n");
+            printf("Choose Option:\n\nOptions: \n1 = LIGHT MONITOR\n2 = SOIL MONITOR\n3 = LOGS\n4 = Run Monitor\n5 = UPDATE\n6 = GPIOOFF\n7 = IP\n8 = TMUX\n9 = Turn Off SSH\n");
             scanf("%i", &in);
         }
         while (in == 0);
@@ -100,6 +101,10 @@ int monmins = 0;
     else if (in == GPIO)
     {
     	GPIOOFF();
+    }
+    else if (in == IP)
+    {
+    	system("ifconfig");
     }
     else if (in == BASH)
     {
