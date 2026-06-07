@@ -31,10 +31,9 @@ echo copie berryg031 and monitor
 sudo cp berryg /usr/bin
 sudo cp log.md /usr/bin
 sudo cp monitor /usr/bin
-cd /BerryGarden
+cd /BerryGarden/version
 gcc uniup.c -o uniup
-sudo cp uniup uniup.sh /usr/bin
-cd /BerryGarden/versions
+sudo cp uniup uniup.sh uninstall.sh /usr/bin
 echo cleanup
 echo remove berryg.elf
 cd /BerryGarden/BerryGardenV0.4
