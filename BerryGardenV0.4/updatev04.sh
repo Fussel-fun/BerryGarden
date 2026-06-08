@@ -24,7 +24,10 @@ cd /BerryGarden/versions
 cp updatev04.sh /usr/bin
 cd /usr/bin
 chomd u+x updatev04.sh 
-
+cd /BerryGarden/BerryGardenV0.4/temp
+cp runtemp.sh /usr/bin
+cd /usr/bin 
+chomd u+x runtemp.sh
 cd /BerryGarden/BerryGardenV0.4
 echo remove berryg.elf
 rm berryg

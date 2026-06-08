@@ -23,14 +23,19 @@ chmod u+x uniup.sh
 cd /BerryGarden/versions
 cp updatev04.sh /usr/bin
 cd /usr/bin
-chomd u+x updatev04.sh 
+chmod u+x updatev04.sh 
 
+
+echo Add Temp Script
+cd /BerryGarden/BerryGardenV0.4/temp
+sudo cp runtemp.sh /usr/bin
+python3 -m venv myenv
+source myenv/bin/activate
+python3 -m pi install adafruit-circuitpython-dht
+cd /usr/bin
+chmod u+x runtemp.sh
 cd /BerryGarden/BerryGardenV0.4
 echo remove berryg.elf
 rm berryg
-echo Add Auto Start on Login
-cd / 
-source myenv/bin/activate
-python3 -m pip install adafruit-circuitpython-dht
 echo Open Readme...
 nano READMEV0.4.md

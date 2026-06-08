@@ -29,6 +29,7 @@ int GPIOOFF();
 
 int main()
 {
+   system("uniup.sh");
    wiringPiSetup();
         pinMode (PIN26, OUTPUT); //LIGHTCHECK
         pinMode (PIN16, INPUT);  //LIGHTCHECK
@@ -104,7 +105,7 @@ int monmins = 0;
     }
     else if (in == TEMP)
     {
-    	system("python /test.py");
+    	system("./runtemp.sh");
     }
     else if (in == BASH)
     {
