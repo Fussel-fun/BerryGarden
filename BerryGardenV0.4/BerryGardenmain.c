@@ -125,7 +125,7 @@ if (in == lisomonitor)
 }
 if (in == pumpon)
 {
-int pumpin
+int pumpin;
 	digitalWrite(PIN18, HIGH);
 		printf("PUMP RUNNING\npress any Number to Stop Pump(not 0)");
 		scanf("%i", pumpin);
