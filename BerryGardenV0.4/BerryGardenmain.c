@@ -14,7 +14,7 @@ const int lightcheck = 1;
 const int soilcheck = 2;
 const int tempmon = 3;
 const int lisomonitor = 4;
-const int printlog = 5;
+const int pumpon = 5;
 const int gpiooff = 6;
 const int update = 7;
 const int tmux = 8;
@@ -26,6 +26,7 @@ const int quit = 9;
 #define PIN16 27        // READ LIGHTCHECK
 #define PIN14 15        // OUTPUT SOIL
 #define PIN15 16        // READ SOIL 
+#define PIN18 1 		// Pump PWR
 
 	
 // MAIN FUNK
@@ -39,6 +40,8 @@ wiringPiSetup();
      pinMode (PIN16, INPUT);  //LIGHTCHECK
      pinMode (PIN14, OUTPUT); //SOILPROB
      pinMode (PIN15, INPUT);  //SOILPROB
+     pinMode (PIN15, OUTPUT); // PUMP PWR
+ 
 
 	// check Update 
 	system("uniup.sh");
@@ -55,7 +58,7 @@ wiringPiSetup();
 while (in != 9)
 {
 printf("Choose Option:\n");
-printf("1 = LIGHT\n2 = SOIL\n3 = TEMP\n4 = SOIL/LIGHTMONITOR\n5 = LOGS S/L\n6 = GPIOOFF\n7 = UPDATE\n8 = TMUX\n9 = QUIT\n\n ");
+printf("1 = LIGHT\n2 = SOIL\n3 = TEMP\n4 = SOIL/LIGHTMONITOR\n5 = WATER S/L\n6 = GPIOOFF\n7 = UPDATE\n8 = TMUX\n9 = QUIT\n\n ");
 scanf("%i", &in);
 in = mainmenu(in);
 }
@@ -120,9 +123,15 @@ if (in == lisomonitor)
 	system("monitor");
 	in = 0;
 }
-if (in == printlog)
+if (in == pumpon)
 {
-	openlog;
+	in = 0;
+	while (in == 0)
+	{
+		digitalWrite(PIN18, HIGH);
+		printf("PUMP RUNNING\npress any Number to Stop Pump(not 0)");
+		scanf("%i", in);
+	}
 	in = 0;
 }
 if (in == gpiooff)
