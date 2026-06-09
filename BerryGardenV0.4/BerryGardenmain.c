@@ -74,6 +74,7 @@ if (in == lightcheck)
 {
     FILE* file;
     file = fopen("log.md", "a");
+   pullUpDnControl (PIN26, PUD_DOWN);
 	digitalWrite(PIN26, HIGH);
     if (digitalRead(PIN16) == LOW)
     {
@@ -95,7 +96,7 @@ else if (in == soilcheck)
 {
 	FILE* file;
 		file = fopen("log.md", "a");
-		pullUpDnControl (PIN15, PUD_OFF);
+		pullUpDnControl (PIN15, PUD_UP);
 		 digitalWrite(PIN14, HIGH);
 			if (digitalRead(PIN15) == HIGH)
 			{
@@ -127,6 +128,7 @@ else if (in == lisomonitor)
 else if (in == pumpon)
 {
 int pumpin;
+	pullUpDnControl (PIN18, PUD_UP);
 	digitalWrite(PIN18, HIGH);
 		printf("PUMP RUNNING\npress any Number to Stop Pump(not 0)");
 		scanf("%i", pumpin);
@@ -231,7 +233,8 @@ int gpioff()
     FILE* file;
     file = fopen("logtemp.txt", "a");
     digitalWrite (PIN26, LOW);
-    digitalWrite (PIN14, LOW);  
+    digitalWrite (PIN14, LOW); 
+    digitalWrite(PIN18, LOW); 
     fprintf(file, "%s\n GPIO OFF\n\n", ctime(&currentTime));
     fclose(file);
     return 0;
