@@ -125,14 +125,15 @@ if (in == lisomonitor)
 }
 if (in == pumpon)
 {
-	in = 0;
-	while (in == 0)
-	{
-		digitalWrite(PIN18, HIGH);
+	digitalWrite(PIN18, HIGH);
 		printf("PUMP RUNNING\npress any Number to Stop Pump(not 0)");
 		scanf("%i", in);
+	if (in =! 0)
+	{
+	digitalWrite(PIN18, LOW);
+	in = 0;	
 	}
-	in = 0;
+
 }
 if (in == gpiooff)
 {
