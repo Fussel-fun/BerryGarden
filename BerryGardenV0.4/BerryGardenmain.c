@@ -57,8 +57,8 @@ wiringPiSetup();
 
 while (in != 9)
 {
-printf("Choose Option:\n");
-printf("1 = LIGHT\n2 = SOIL\n3 = TEMP\n4 = SOIL/LIGHTMONITOR\n5 = WATER S/L\n6 = GPIOOFF\n7 = UPDATE\n8 = TMUX\n9 = QUIT\n\n ");
+printf("Choose Option:\nQL = QUICKLOOK");
+printf("1 = LIGHTQL\n2 = SOILQL\n3 = TEMPMONITOR\n4 = SOIL/LIGHTMONITOR\n5 = WATER ON/OFF\n6 = GPIOOFF\n7 = UPDATE\n8 = TMUX\n9 = QUIT\n\n ");
 scanf("%i", &in);
 mainmenu(in);
 }
