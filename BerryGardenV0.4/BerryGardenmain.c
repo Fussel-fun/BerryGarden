@@ -8,7 +8,7 @@ int mainmenu(int in);
 int quitssh ();
 int openlog ();
 int gpioff();
-
+int pumpGPIO(char in);
 
 const int lightcheck = 1;
 const int soilcheck = 2;
@@ -127,16 +127,7 @@ else if (in == lisomonitor)
 }
 else if (in == pumpon)
 {
-int pumpin;
-	pullUpDnControl (PIN18, PUD_UP);
-	digitalWrite(PIN18, HIGH);
-		printf("PUMP RUNNING\npress any Number to Stop Pump(not 0)");
-		scanf("%i", pumpin);
-	if (pumpin =! 0)
-	{
-	digitalWrite(PIN18, LOW);	
-	}
-	in = 0;
+	pumpGPIO(in);
 }
 else if (in == gpiooff)
 {
@@ -240,3 +231,28 @@ int gpioff()
     return 0;
 }
 
+//Water Pump Switch INACTIVE
+int pumpGPIO(char in)   //HDWR1
+{
+    time_t currentTime;
+    time(&currentTime);
+    FILE* file;
+    file = fopen("log.md", "a");
+    // Set GPIO Pin for Water System 
+    if (in == 0)
+    {
+    	digitalWrite(PIN18, LOW);
+        printf("Pump Off\n");
+        fprintf(file, "%s\n PUMP OFF\n\n", ctime(&currentTime));
+        fclose(file);
+        return 0;
+    }
+    else if (in == 1)
+    {
+    	digitalWrite(PIN18, HIGH);
+        printf("Pump On\n");
+        fprintf(file, "%s\n PUMP ON\n\n", ctime(&currentTime));
+        fclose(file);
+        return 1;
+    }
+}
