@@ -60,7 +60,7 @@ while (in != 9)
 printf("Choose Option:\n");
 printf("1 = LIGHT\n2 = SOIL\n3 = TEMP\n4 = SOIL/LIGHTMONITOR\n5 = WATER S/L\n6 = GPIOOFF\n7 = UPDATE\n8 = TMUX\n9 = QUIT\n\n ");
 scanf("%i", &in);
-in = mainmenu(in);
+mainmenu(in);
 }
 
 return 0;
@@ -81,6 +81,7 @@ if (in == lightcheck)
         printf("OFF\n");
         fclose(file);    
     }
+
  	if (digitalRead(PIN16) == HIGH)
     {
         // LIGHT MENU
@@ -90,7 +91,7 @@ if (in == lightcheck)
     }
 	delay(500);
 }
-if (in == soilcheck)
+else if (in == soilcheck)
 {
 	FILE* file;
 		file = fopen("log.md", "a");
@@ -112,18 +113,18 @@ if (in == soilcheck)
 				}      
 	delay(500);
 }
-if (in == tempmon)
+else if (in == tempmon)
 {
 	system("./runtemp.sh");
 	in = 0;
 }
-if (in == lisomonitor)
+else if (in == lisomonitor)
 {
 	printf("STARTING MONITOR\n");
 	system("monitor");
 	in = 0;
 }
-if (in == pumpon)
+else if (in == pumpon)
 {
 int pumpin;
 	digitalWrite(PIN18, HIGH);
@@ -131,27 +132,26 @@ int pumpin;
 		scanf("%i", pumpin);
 	if (pumpin =! 0)
 	{
-	digitalWrite(PIN18, LOW);
-	in = 0;	
+	digitalWrite(PIN18, LOW);	
 	}
-
+	in = 0;
 }
-if (in == gpiooff)
+else if (in == gpiooff)
 {
 	gpioff();
 	in = 0;
 }
-if (in == update)
+else if (in == update)
 {
 	system("uniup");
 	in = 0;
 }
-if (in == tmux)
+else if (in == tmux)
 {
 	system("tmux");
 	in = 0;
 }
-if (in == quit)
+else if (in == quit)
 {
 	printf("QUIT\n");
 	time_t currentTime;
