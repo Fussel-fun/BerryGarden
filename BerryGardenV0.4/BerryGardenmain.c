@@ -166,9 +166,8 @@ else if (in == quit)
 	fprintf(file, "%s\n SSH CLOSED\n",ctime(&currentTime));
 	fclose(file);
 	gpioff();
-	return 9;	
 }
-return 0;
+
 }
 	    		    		    	
 int openlog (int in)
