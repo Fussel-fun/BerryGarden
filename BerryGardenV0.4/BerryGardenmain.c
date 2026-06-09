@@ -40,7 +40,7 @@ wiringPiSetup();
      pinMode (PIN16, INPUT);  //LIGHTCHECK
      pinMode (PIN14, OUTPUT); //SOILPROB
      pinMode (PIN15, INPUT);  //SOILPROB
-     pinMode (PIN15, OUTPUT); // PUMP PWR
+     pinMode (PIN18, OUTPUT); // PUMP PWR
  
 
 	// check Update 
