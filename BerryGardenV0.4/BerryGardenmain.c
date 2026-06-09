@@ -8,8 +8,7 @@ int mainmenu(int in);
 int quitssh ();
 int openlog ();
 int gpioff();
-void checkLightGPIO();
-void soilreadGPIO();
+
 
 const int lightcheck = 1;
 const int soilcheck = 2;
@@ -66,16 +65,49 @@ return 0;
 // PROTOTYPE FUNK
 int mainmenu(int in)
 {
-						
+   time_t currentTime;
+   time(&currentTime);					
 if (in == lightcheck)
 {
-	checkLightGPIO;
-	in = 0;
+    FILE* file;
+    file = fopen("log.md", "a");
+	digitalWrite(PIN26, HIGH);
+    if (digitalRead(PIN16) == LOW)
+    {
+    	fprintf(file, "%s\n LIGHT OFF\n\n", ctime(&currentTime));
+        printf("OFF\n");
+        fclose(file);    
+    }
+ 	if (digitalRead(PIN16) == HIGH)
+    {
+        // LIGHT MENU
+        fprintf(file, "%s\n LIGHT ON\n\n", ctime(&currentTime));
+        printf("ON\n");
+        fclose(file);
+    }
+	delay(500);
 }
 if (in == soilcheck)
 {
-	soilreadGPIO;
-	in = 0;
+	FILE* file;
+		file = fopen("log.md", "a");
+		pullUpDnControl (PIN15, PUD_OFF);
+		 digitalWrite(PIN14, HIGH);
+			if (digitalRead(PIN15) == HIGH)
+			{
+				printf("Genug Feuchtigkeit\n");
+				fprintf(file, "%s\n ERDE FEUCHT\n\n", ctime(&currentTime));
+				fclose(file);
+				digitalWrite(PIN14, LOW);
+				}
+				else if(digitalRead(PIN15) == LOW)
+				{
+					printf("Trocken\n");
+					fprintf(file, "%s\n ERDE TROCKEN\n\n", ctime(&currentTime));
+					fclose(file);
+					digitalWrite(PIN14, LOW);
+				}      
+	delay(500);
 }
 if (in == tempmon)
 {
@@ -195,52 +227,3 @@ int gpioff()
     return 0;
 }
 
-
-// Check if Light is On 
-void checkLightGPIO()
-{
-
-    time_t currentTime;
-    time(&currentTime);
-    FILE* file;
-    file = fopen("log.md", "a");
-	digitalWrite(PIN26, HIGH);
-    if (digitalRead(PIN16) == LOW)
-    {
-    	fprintf(file, "%s\n LIGHT OFF\n\n", ctime(&currentTime));
-        printf("OFF\n");
-        fclose(file);    
-    }
- 	if (digitalRead(PIN16) == HIGH)
-    {
-        // LIGHT MENU
-        fprintf(file, "%s\n LIGHT ON\n\n", ctime(&currentTime));
-        printf("ON\n");
-        fclose(file);
-    }
-}
-
-// Check Soil
-void soilreadGPIO()
-{
-		time_t currentTime;
-		time(&currentTime);
-FILE* file;
-	file = fopen("log.md", "a");
-	pullUpDnControl (PIN15, PUD_OFF);
-	 digitalWrite(PIN14, HIGH);
-		if (digitalRead(PIN15) == HIGH)
-		{
-			printf("Genug Feuchtigkeit\n");
-			fprintf(file, "%s\n ERDE FEUCHT\n\n", ctime(&currentTime));
-			fclose(file);
-			digitalWrite(PIN14, LOW);
-			}
-			else if(digitalRead(PIN15) == LOW)
-			{
-				printf("Trocken\n");
-				fprintf(file, "%s\n ERDE TROCKEN\n\n", ctime(&currentTime));
-				fclose(file);
-				digitalWrite(PIN14, LOW);
-			}      
-}
