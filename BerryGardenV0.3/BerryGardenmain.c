@@ -108,7 +108,6 @@ int monmins = 0;
     }
 in = 0;
 }
-
 // Check Soil
 int soilreadGPIO()
 {

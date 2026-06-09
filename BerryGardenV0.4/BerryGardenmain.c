@@ -117,32 +117,55 @@ else if (in == soilcheck)
 else if (in == tempmon)
 {
 	system("./runtemp.sh");
-	in = 0;
 }
 else if (in == lisomonitor)
 {
 	printf("STARTING MONITOR\n");
 	system("monitor");
-	in = 0;
 }
 else if (in == pumpon)
 {
-	pumpGPIO(in);
+int pumpin[2] = {0, 1};
+int swtch = 0;
+    time_t currentTime;
+    time(&currentTime);
+    FILE* file;
+    file = fopen("log.md", "a");
+    // Set GPIO Pin for Water System 
+    printf("PRESS 1 = ON O = OFF\n");
+
+    scanf("%i", &swtch);	
+
+
+
+    if (swtch == pumpin[0])
+    {
+    	digitalWrite(PIN18, LOW);
+        printf("Pump Off\n");
+        fprintf(file, "%s\n PUMP OFF\n\n", ctime(&currentTime));
+        fclose(file);
+        delay(500);
+    }
+    if (swtch == pumpin[1])
+    {
+    	digitalWrite(PIN18, HIGH);
+        printf("Pump On\n");
+        fprintf(file, "%s\n PUMP ON\n\n", ctime(&currentTime));
+        fclose(file);
+        delay (500);
+    }
 }
 else if (in == gpiooff)
 {
 	gpioff();
-	in = 0;
 }
 else if (in == update)
 {
 	system("uniup");
-	in = 0;
 }
 else if (in == tmux)
 {
 	system("tmux");
-	in = 0;
 }
 else if (in == quit)
 {
@@ -234,25 +257,4 @@ int gpioff()
 //Water Pump Switch INACTIVE
 int pumpGPIO(char in)   //HDWR1
 {
-    time_t currentTime;
-    time(&currentTime);
-    FILE* file;
-    file = fopen("log.md", "a");
-    // Set GPIO Pin for Water System 
-    if (in == 0)
-    {
-    	digitalWrite(PIN18, LOW);
-        printf("Pump Off\n");
-        fprintf(file, "%s\n PUMP OFF\n\n", ctime(&currentTime));
-        fclose(file);
-        return 0;
-    }
-    else if (in == 1)
-    {
-    	digitalWrite(PIN18, HIGH);
-        printf("Pump On\n");
-        fprintf(file, "%s\n PUMP ON\n\n", ctime(&currentTime));
-        fclose(file);
-        return 1;
-    }
 }
