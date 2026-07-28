@@ -5,6 +5,7 @@ mkdir /berrypy
 python3 -m venv myenv
 python3 -m pip install adafruit-circuitpython-dht
 echo updating .bashrc
+cd 
 echo "echo staring python env" >> .bashrc
 echo "cd /berrypy" >> .bashrc
 echo "source myenv/bin/activate" >> .bashrc
